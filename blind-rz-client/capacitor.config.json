@@ -1,0 +1,6 @@
+{
+  "appId": "com.ionic.blindRZ",
+	"appName": "blind-rz",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary" no-padding>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start" >
+      <ion-button [routerLink]="['/home/tabs/devices']">
+        <img style="margin: 0px;" alt="logo" height="40px" src="assets/icon/logo_transparent.png">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>How to connect the system to your local network?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row style="margin-top: 10%;">
+        <ion-col>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          Choose AutoConnectAP in order to set your network credentials
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          For AutoConnectAP SSID, enter for password "password"
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          After this, you are redirected to WiFiManager, Configure WiFi web page.
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          On Configure Wifi web page, enter your SSID and password wifi
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          After completing them, enter your email and password that were also set in the app account
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

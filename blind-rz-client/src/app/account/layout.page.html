@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary" no-padding>
+    <!-- <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start" >
+      <ion-button [routerLink]="['/account/login']">
+        <img style="margin: 0px;" alt="logo" height="40px" src="assets/icon/logo_transparent.png">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="scroll-content">
+      <ion-router-outlet></ion-router-outlet>
+</ion-content>
+

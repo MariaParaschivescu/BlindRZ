@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary" no-padding>
+    <ion-buttons slot="start" >
+      <ion-button [routerLink]="['/home/tabs/devices']">
+        <img style="margin: 0px;" alt="logo" height="40px" src="assets/icon/logo_transparent.png">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row style="margin-top: 20px;">
+    <ion-col style="text-align: center; width: 100% !important;">
+      <ion-text>Blinds Control</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="controlForm">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-checkbox formControlName="clockwise" color="primary" checked slot="start"></ion-checkbox>
+                <!-- Clockwise -->
+                <ion-label *ngIf="clockwiseControl === true">Open Blinds</ion-label>
+                <!-- CounterClockwise -->
+                <ion-label *ngIf="clockwiseControl === false">Close Blinds</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>Number of steps</ion-label>
+                <ion-input type="number" formControlName="commandValue"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" (click)="onSubmit()">
+                <ion-icon slot="icon-only" name="caret-forward-outline"></ion-icon>
+                Go!
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

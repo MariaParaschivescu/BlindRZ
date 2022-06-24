@@ -1,0 +1,56 @@
+<ion-content>
+  <ion-row style="margin-top: 30px;">
+    <ion-col style="text-align: center; width: 100% !important;">
+      <ion-text>Log In</ion-text>
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" offset-sm="3" size-sm="6">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="at-outline"></ion-icon>
+              <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="form.get('email').errors && form.get('email').errors['required'] && form.get('email').touched" lines="none">
+              <p class="error-form">It is mandatory to provide an email!</p>
+            </ion-item>
+            <ion-item *ngIf="form.get('email').errors && form.get('email').errors['email'] && form.get('email').touched" lines="none">
+              <p class="error-form">Please provide a valid email!</p>
+            </ion-item>
+            <ion-item>
+              <ion-input [type]="passwordInputType" [hidden]="false" formControlName="password"></ion-input>
+              <ion-button fill="clear" type="button" (click)="onChangeVisibility()">
+                <ion-icon [name]="invisible ? 'eye-off-outline' : 'eye-outline'" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item *ngIf="form.get('password').errors && form.get('password').errors['required'] && form.get('password').touched" lines="none">
+              <p class="error-form">Please provide a password!</p>
+            </ion-item>
+            <ion-item *ngIf="form.get('password').errors && form.get('password').errors['pattern'] && form.get('password').touched" lines="none">
+              <p class="error-form">Please provide a password having at least 8 symbols, 1 upper letter, i digit and 1 special character!</p>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 30px;">
+        <ion-col size="12" offset-sm="3" size-sm="6">
+            <ion-checkbox style="margin-right: 10px;"></ion-checkbox>
+            <ion-label>Remember me</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 20px;">
+        <ion-col size="12" offset-sm="3" size-sm="6">
+          <ion-button expand="block" type="submit" margin [disabled]="!form.valid">Log in</ion-button>
+          <ion-button style="margin-top: 20px;" expand="block" type="button" fill="clear" routerLink="../forgot-password">Forgot password?</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 50px;">
+        <ion-col size="12" offset-sm="3" size-sm="6">
+          <ion-button expand="block" color="tertiary" fill="outline" type="button" routerLink="../register">Create an account</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

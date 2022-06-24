@@ -1,0 +1,115 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary" no-padding>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCreateProgram()" [disabled]="!form.valid">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center start">
+      <a href="/home/tabs/devices">
+        <img style="margin: 0%;" alt="logo" height="40px" src="assets/icon/logo_transparent.png">
+      </a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item button="true" id="open-date-input">
+            <ion-label>Start from</ion-label>
+            <ion-text slot="end">{{ dateValue }}</ion-text>
+            <ion-popover trigger="open-date-input" show-backdrop="false">
+              <ng-template>
+                <ion-datetime
+                  formControlName="startDate"
+                  #startDate
+                  presentation="date"
+                  (ionChange)="dateValue = formatDate(startDate.value)"
+                ></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item button="true" id="open-date-input1">
+            <ion-label>End to</ion-label>
+            <ion-text slot="end">{{ dateValueEnd }}</ion-text>
+            <ion-popover trigger="open-date-input1" show-backdrop="false">
+              <ng-template>
+                <ion-datetime
+                  formControlName="endDate"
+                  #endDate
+                  presentation="date"
+                  (ionChange)="dateValueEnd = formatDate(endDate.value)"
+                ></ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content> -->
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-item>
+              <ion-label>Description</ion-label>
+              <ion-input type="text" formControlName="description"></ion-input>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item button="true" id="open-date-input">
+              <ion-label>Start from</ion-label>
+              <ion-text slot="end">{{ dateValue }}</ion-text>
+              <ion-popover trigger="open-date-input" show-backdrop="false">
+                <ng-template>
+                  <ion-datetime
+                    formControlName="startDate"
+                    #startDate
+                    presentation="date"
+                    (ionChange)="dateValue = formatDate(startDate.value)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-popover>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item button="true" id="open-date-input1">
+              <ion-label>End to</ion-label>
+              <ion-text slot="end">{{ dateValueEnd }}</ion-text>
+              <ion-popover trigger="open-date-input1" show-backdrop="false">
+                <ng-template>
+                  <ion-datetime
+                    formControlName="endDate"
+                    #endDate
+                    presentation="date"
+                    (ionChange)="dateValueEnd = formatDate(endDate.value)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-popover>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button>
+                <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="form.get('endDate').errors && form.get('endDate').errors['greaterThan']">
+            <ion-item>
+               <ion-text>Bla bla error</ion-text>
+            </ion-item>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </form>

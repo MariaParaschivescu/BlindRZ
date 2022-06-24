@@ -1,0 +1,7 @@
+{
+  "name": "blind-rz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
